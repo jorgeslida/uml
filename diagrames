@@ -1,0 +1,40 @@
+
+```mermaid
+    sequenceDiagram
+    Profesor ->> Game : Empieza una Sala
+    Game ->> Profesor : Le da un Código
+    Profesor ->> Alumno : Código
+    Alumno ->> Profesor : Código
+    Alumno ->> Profesor : Nombre
+    Profesor ->> Game : Empieza
+    loop Cada Pregunta
+    Game ->> Profesor :  Pregunta
+    Game ->> Profesor : Una/varias Respuestas
+    Game ->> Profesor : Tiempo
+    Profesor ->> Alumno : Muestra Preguntas y Respuestas
+    Alumno ->> Profesor : Responde la Pregunta
+    Game ->> Profesor: Tabla de Clasificacion
+    end
+    Profesor ->> Alumno : Primeras Posiciones
+    Game ->> Alumno : Posicion Final
+```
+
+```mermaid
+flowchart
+    A[Recibir Correo] --> B{Opcion?}
+    B -->|Responder| C[Responder el email]
+    B -->|Reenviar| D[Reenvia el correo a otra persona]
+    D --> B
+    C --> E[email del enviador]
+```
+
+```mermaid
+stateDiagram-v2
+    state "Tumbado" as tumbado
+    state "Normal" as normal
+    state "Saltar" as saltar
+    [*] --> normal
+    normal --> tumbado : tumbarse
+    normal --> saltar : saltar
+    volver --> [*]
+ ```
